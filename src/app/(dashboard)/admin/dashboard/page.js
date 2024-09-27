@@ -15,7 +15,6 @@ function page() {
 
             if (cookie.status === 'success') {
                 data = await getAllData();
-                //console.log('Dashboard', data.data);
                 setData(data?.data);
             }
         };

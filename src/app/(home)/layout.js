@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
             if (cookie.status === 'success') {
                 setCookie(cookie.data.auth.value);
                 setUserId(cookie.data.userId.value);
-                //setRole(cookie.data.role.value);
                 data = await getData(parseInt(cookie.data.userId.value));
                 setValue(data.data);
             }
