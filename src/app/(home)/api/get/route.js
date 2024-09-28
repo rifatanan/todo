@@ -1,17 +1,15 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
-export async function POST(req, res) {
+export async function POST(request) {
     try {
-        let reqBody = await req.json();
-        let id = parseInt(reqBody.user_id);
-
+        let requestBody = await request.json();
         const prisma = new PrismaClient();
         const result = await prisma.task.findMany({
-            where: { user_id: reqBody },
+            where: { user_id: requestBody },
         });
         return NextResponse.json({ status: 'success', data: result });
-    } catch (e) {
-        return NextResponse.json({ status: 'fail', data: e });
+    } catch (error) {
+        return NextResponse.json({ status: 'fail', data: error });
     }
 }

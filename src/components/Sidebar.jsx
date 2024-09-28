@@ -19,7 +19,6 @@ import { useRouter } from 'next/navigation';
 			
 			if (cookie.status === 'success') {
 				data = await getAllData();
-				console.log('data1 ',data.data);
             }
 		};
 		fetchData();
@@ -34,9 +33,9 @@ import { useRouter } from 'next/navigation';
 			},
     	}
 
-		let val = await fetch('/api/deletecookie',sendingMethod)
+		let value = await fetch('/api/deletecookie',sendingMethod)
 
-		if(val.status === 200 ){
+		if(value.status === 200 ){
 			toast.success('Log Out');
 			await new Promise(resolve => setTimeout(resolve, 1000));
 			router.push('/login');

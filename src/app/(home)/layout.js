@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
     useEffect(() => {
         const fetchData = async () => {
             const cookie = await cookieCheck();
-            console.log('cookie: ', cookie);
 
             let data;
             if (cookie.status === 'success') {
@@ -28,7 +27,6 @@ export default function RootLayout({ children }) {
         fetchData();
     }, []);
 
-    //if (cookie?.data?.role.value === 'user') {
     return (
         <html lang="en">
             <body className="bg-slate-100">

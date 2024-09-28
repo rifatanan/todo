@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
-export async function POST(req, res) {
+export async function POST(request) {
     try {
-        let reqBody = await req.json();
-        let name = reqBody.newName;
-        let task = reqBody.newTask;
-        let Id = parseInt(reqBody.Id);
+        let requestBody = await request.json();
+        let name = requestBody.newName;
+        let task = requestBody.newTask;
+        let Id = parseInt(requestBody.Id);
 
         const prisma = new PrismaClient();
         const result = await prisma.task.update({
@@ -14,7 +14,7 @@ export async function POST(req, res) {
             data: { name: name, task: task },
         });
         return NextResponse.json({ status: 'success', data: result });
-    } catch (e) {
-        return NextResponse.json({ status: 'fail', data: e });
+    } catch (error) {
+        return NextResponse.json({ status: 'fail', data: error });
     }
 }

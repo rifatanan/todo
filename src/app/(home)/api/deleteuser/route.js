@@ -1,20 +1,21 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
-export async function DELETE(req, res) {
+export async function DELETE(request) {
     try {
-        let reqBody = await req.json();
-        let id = reqBody;
-
+        let requestBody = await request.json();
         const prisma = new PrismaClient();
         const result1 = await prisma.user.delete({
-            where: { id: id },
+            where: { id: requestBody },
         });
-        const result2 = await prisma.task.delete({
-            where: { user_id: id },
+        const result2 = await prisma.task.deleteMany({
+            where: { user_id: requestBody },
         });
-        return NextResponse.json({ status: 'success', data: result });
-    } catch (e) {
-        return NextResponse.json({ status: 'fail', data: e });
+        return NextResponse.json({
+            status: 'success',
+            data: { result1, result2 },
+        });
+    } catch (error) {
+        return NextResponse.json({ status: 'fail', data: error });
     }
 }

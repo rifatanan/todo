@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
-export async function POST(req, res) {
+export async function POST() {
     try {
         const prisma = new PrismaClient();
         const result1 = await prisma.task.findMany({});
@@ -10,7 +10,7 @@ export async function POST(req, res) {
             status: 'success',
             data: { result1, result2 },
         });
-    } catch (e) {
-        return NextResponse.json({ status: 'fail', data: e });
+    } catch (error) {
+        return NextResponse.json({ status: 'fail', data: error });
     }
 }

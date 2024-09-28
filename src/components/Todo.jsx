@@ -22,8 +22,6 @@ function Todo() {
         fetchData();
     }, []);
 
-	//console.log('todo2',data);
-
 	const handleDelete = async(id) => {
 		
 		let response = await DeleteId(id);
