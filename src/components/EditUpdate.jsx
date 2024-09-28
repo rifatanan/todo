@@ -48,7 +48,6 @@ function Edit() {
 		toast.error('Same Value!');
     };
 
-
   	return (
 		<div className='w-full flex justify-center'>
 			<Toaster />

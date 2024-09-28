@@ -1,12 +1,11 @@
 'use client'
 import React from 'react'
 
-function DashNav() {
-	
+function DashNav({name}) {
 	return (
 		<div className='w-full'>
 			<div className='bg-slate-200 w-full rounded-md p-3 flex justify-between'>
-				<p className='font-bold'>Dashboard</p>
+				<p className='font-bold'>{name}</p>
 				<input placeholder='Search Users' className='p-1 rounded-md outline-none focus'></input>
 			</div>
 			<div className='w-4/5 mt-5 flex justify-between gap-x-2 h-20'>

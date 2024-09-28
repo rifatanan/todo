@@ -15,7 +15,6 @@ function User() {
 
             if (cookie.status === 'success') {
                 data = await getAllData();
-                //console.log('Todo', data.data.result2.id);
 				setData(data.data.result2);
             }
         };
@@ -23,7 +22,6 @@ function User() {
     }, []);
 
 	const handleDelete = async(id) => {
-		console.log('handle delete',id);
 		
 		let response = await DeleteUser(id);
 
@@ -45,7 +43,7 @@ function User() {
 
 	return (
 		<div className='bg-slate-200 mt-5  w-4/5 rounded-md p-2 '>
-			<h1 className='text-xl'>User</h1>
+			<h1 className='text-xl'>Users</h1>
 			<div className='p-3'>
 				<div className='flex font-semibold text-sm'>
 					<h1 className='w-1/4'>User Name</h1>
@@ -53,7 +51,7 @@ function User() {
 					<h1 className='w-1/4'>Email</h1>
 					<h1 className='w-1/4'>Actions</h1>
 				</div>
-				{data?.map((item,index) =>
+				{data && data?.map((item,index) =>
 					<div key={index} className='mt-2 flex hover:bg-slate-300 rounded-md p-1'>
 						<h1 className='w-1/4'>{item.name}</h1>
 						<h1 className='w-1/4'>Rifad Anan</h1>

@@ -1,13 +1,12 @@
 'use client'
-import Image from 'next/image'
-import React, { useEffect } from 'react'
-import profile from '../../public/Image/profile.webp'
-import Link from 'next/link'
-import cookieCheck from '@/JS/Cookie'
-import getAllData from '@/JS/GetAllData'
+import Image from 'next/image';
+import React, { useEffect } from 'react';
+import profile from '../../public/Image/profile.webp';
+import Link from 'next/link';
+import cookieCheck from '@/JS/Cookie';
+import getAllData from '@/JS/GetAllData';
 import toast, { Toaster } from 'react-hot-toast';
-import { useRouter } from 'next/navigation'
-
+import { useRouter } from 'next/navigation';
 
  function Sidebar() {
 
@@ -17,7 +16,6 @@ import { useRouter } from 'next/navigation'
 	useEffect(() => {
 		const fetchData = async () => {
 			const cookie = await cookieCheck();
-			//console.log('Side ',cookie);
 			
 			if (cookie.status === 'success') {
 				data = await getAllData();
@@ -35,8 +33,6 @@ import { useRouter } from 'next/navigation'
 				'Content-Type': 'application/json',
 			},
     	}
-		
-		console.log('logout clicked');
 
 		let val = await fetch('/api/deletecookie',sendingMethod)
 
