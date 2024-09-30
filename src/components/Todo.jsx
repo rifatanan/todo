@@ -15,14 +15,11 @@ function Todo() {
 
             if (cookie.status === 'success') {
                 data = await getAllData();
-                //console.log('Todo', data.data);
 				setData(data.data.result1);
             }
         };
         fetchData();
     }, []);
-
-	//console.log('todo2',data);
 
 	const handleDelete = async(id) => {
 		

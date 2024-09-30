@@ -68,7 +68,7 @@ import { useRouter } from 'next/navigation'
 					<p className='text-sm'>Pages</p>
 					<Link href={'/admin/dashboard'} className='block p-2 hover:bg-slate-300 rounded-md'>Dashboard</Link>
 					<Link href={'/admin/user'} className='block p-2 hover:bg-slate-300 rounded-md'>Users</Link>
-					<Link href={'/admin/todo'} className='block p-2 hover:bg-slate-300 rounded-md'>All Todo</Link>
+					<Link href={'/admin/todo'} className='block p-2 hover:bg-slate-300 rounded-md'>Todo</Link>
 				</div>
 				<div className='font-semibold mt-5'>
 					<p  className='text-sm'>User</p>
