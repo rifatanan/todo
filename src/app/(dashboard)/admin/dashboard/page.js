@@ -1,29 +1,18 @@
-'use client';
 import DashNav from '@/components/DashNav';
 import Todo from '@/components/Todo';
 import User from '@/components/User';
-import cookieCheck from '@/JS/Cookie';
-import getAllData from '@/JS/GetAllData';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+
+const pageName = 'DashBoard';
+
+export const metadata = {
+    title: pageName,
+};
 
 function page() {
-    let [data, setData] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const cookie = await cookieCheck();
-
-            if (cookie.status === 'success') {
-                data = await getAllData();
-                setData(data?.data);
-            }
-        };
-        fetchData();
-    }, []);
-
     return (
         <div className="w-full p-2">
-            <DashNav />
+            <DashNav pageName={pageName} />
             <Todo />
             <User />
         </div>

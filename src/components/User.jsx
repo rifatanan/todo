@@ -45,7 +45,7 @@ function User() {
 
 	return (
 		<div className='bg-slate-200 mt-5  w-4/5 rounded-md p-2 '>
-			<h1 className='text-xl'>User</h1>
+			<h1 className='text-xl'>Users</h1>
 			<div className='p-3'>
 				<div className='flex font-semibold text-sm'>
 					<h1 className='w-1/4'>User Name</h1>
