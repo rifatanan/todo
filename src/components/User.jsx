@@ -5,6 +5,8 @@ import getAllData from '@/JS/GetAllData';
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 
+
+
 function User() {
 
 	let [data, setData ] = useState(null);
@@ -13,9 +15,8 @@ function User() {
         const fetchData = async () => {
             const cookie = await cookieCheck();
 
-            if (cookie.status === 'success') {
+            if (cookie?.status === 'success') {
                 data = await getAllData();
-                //console.log('Todo', data.data.result2.id);
 				setData(data.data.result2);
             }
         };
@@ -23,7 +24,6 @@ function User() {
     }, []);
 
 	const handleDelete = async(id) => {
-		console.log('handle delete',id);
 		
 		let response = await DeleteUser(id);
 

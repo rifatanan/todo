@@ -25,15 +25,10 @@ function Todo() {
 		
 		let response = await DeleteId(id);
 
-		function removeValue(value) {
-			if (value.id === id)
-				return false;
-			return true;
+		if (data) {
+			const filteredData = data.filter(value => value?.id !== id);
+			setData(filteredData);
 		}
-
-		const x = data.filter(removeValue);
-
-		setData(x);
 		
 		if(response.status ==='success'){
 			toast.success('Item Deleted');

@@ -1,10 +1,10 @@
 'use client'
-import dataSendId, { getDataId } from '@/JS/Id'
-import Button from '@/utilitys/Button'
-import Input from '@/utilitys/Input'
-import Label from '@/utilitys/Label'
-import {useRouter, useSearchParams } from 'next/navigation'
-import React, { useState } from 'react'
+import Button from '@/utilitys/Button';
+import dataSendId from '@/JS/Id';
+import Input from '@/utilitys/Input';
+import Label from '@/utilitys/Label';
+import {useRouter, useSearchParams } from 'next/navigation';
+import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 function Edit() {

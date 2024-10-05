@@ -1,11 +1,12 @@
 'use client'
-import AppContext from '@/context/AppContext'
-import dataSubmit from '@/JS/AddUpdate'
-import Button from '@/utilitys/Button'
-import Input from '@/utilitys/Input'
-import Label from '@/utilitys/Label'
-import { useRouter } from 'next/navigation'
-import React, { useContext } from 'react'
+import AppContext from '@/context/AppContext';
+import dataSubmit from '@/JS/AddUpdate';
+import Button from '@/utilitys/Button';
+import Input from '@/utilitys/Input';
+import Label from '@/utilitys/Label';
+
+import { useRouter } from 'next/navigation';
+import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 function AddUpdate() {
@@ -17,7 +18,7 @@ function AddUpdate() {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
 		let name = data.get('name'),task = data.get('task');
-		
+	
 		if(name !="" && task!=""){
 			const postData = await dataSubmit({user_id:userId,name,task});
 			if(postData.status === 'success'){

@@ -20,6 +20,7 @@ export default async function RootLayout({ children }) {
             <html lang="en">
                 <body className="">
                     <NoData />
+                    {children}
                 </body>
             </html>
         );
