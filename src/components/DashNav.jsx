@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React from 'react';
 
 function DashNav({pageName}) {
 	
@@ -17,7 +17,8 @@ function DashNav({pageName}) {
 				<div className='bg-slate-200 rounded-md w-1/3 flex p-2 gap-1'>
 					<div>T-T</div>
 					<div>Total Todo</div>
-				</div><div className='bg-slate-200 rounded-md w-1/3 flex p-2 gap-1'>
+				</div>
+				<div className='bg-slate-200 rounded-md w-1/3 flex p-2 gap-1'>
 					<div>T-A</div>
 					<div>Another</div>
 				</div>
