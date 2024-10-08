@@ -37,7 +37,6 @@ function Edit() {
 		if(formValues.name !== previousName || formValues.task !== previousTask){
 			const postData = await dataSendId({newName,newTask,Id});
 			if(postData.status === 'success')
-				console.log('home ',postData.status);
 				
 				toast.success('Task Updated');
 				postData.status='';
